@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<title>Product {{products[0]['id']}} info | Semi Restful Route Demo</title>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+	</head>
+	<body>
+		<h1>Product {{products[0]['id']}}</h1>
+		<table>
+			<tr>
+				<td>
+					<label>
+						Name:
+					</label>
+				</td>
+				<td>
+					{{products[0]['name']}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>
+						Price:
+					</label>
+				</td>
+				<td>
+					{{products[0]['description']}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>
+						Price:
+					</label>
+				</td>
+				<td>
+					{{products[0]['price']}}
+				</td>
+			</tr>
+		</table>
+		<a href="/products/edit/{{products[0]['id']}}">Edit</a>
+		|
+		<a href="/products">Back</a>
+	</body>
+</html>

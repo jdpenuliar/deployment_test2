@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Create a new product | Semi Restful Route Demo</title>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+	</head>
+	<body>
+		<h1>Add a new product</h1>
+		<form action="/products/create" method="post">
+			<label>Name</label>
+			<input type="text" name="name"><br>
+			<label>Description</label>
+			<input type="text" name="description"><br>
+			<label>Price</label>
+			<!-- <input type="number" name="price" step="0.01" min=0><br> -->
+			<input type="text" name="price" step="0.01" min=0><br>
+			<input type="submit" name="action" value="Create">
+		</form>
+		<a href="/products">Go back</a>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		  {% if messages %}
+		    {% for category, message in messages %}
+		      <p>{{ message }}</p>
+		    {% endfor %}
+		  {% endif %}
+		{% endwith %}
+	</body>
+</html>
